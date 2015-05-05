@@ -1,0 +1,26 @@
+﻿@model dynamic
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>title</title>
+</head>
+<body>
+    <div data-ng-app="theApp">
+        <div data-ng-controller="ctrl">
+            <label for="level-{{$index}}" class="checkbox-inline" data-ng-repeat="level in levels">
+                <input type="checkbox" id="level-{{$index}}" data-ng-value="level.id" data-ng-selected="offer.serviceLevels[level.id]" data-ng-model="offer.serviceLevels[level.id]">
+                {{level.name}}
+            </label>
+        </div>
+    </div>
+    <script src="~/Scripts/Vendor/Angular/angular.min.js"></script>
+    <script src="~/Scripts/Core/theApp.js"></script>
+    <script src="/constants/enums"></script>
+</body>
+</html>
